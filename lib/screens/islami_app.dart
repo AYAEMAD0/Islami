@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami/core/utils/app_route.dart';
+import 'package:islami/core/utils/app_theme.dart';
 import 'package:islami/screens/onboarding_screen.dart';
-import 'package:islami/screens/splash_screen.dart';
 import 'home_screen.dart';
 
 class IslamiApp extends StatelessWidget {
@@ -10,9 +10,10 @@ class IslamiApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: AppRoute.splashRouteName,
+      darkTheme: AppTheme.themeDark,
+      themeMode: ThemeMode.dark,
+      initialRoute: AppRoute.onBoardingRouteName,
       routes: {
-        AppRoute.splashRouteName:(context)=>SplashScreen(),
         AppRoute.onBoardingRouteName:(context)=>OnboardingScreen(),
         AppRoute.homeRouteName:(context)=>HomeScreen(),
       },

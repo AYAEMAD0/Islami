@@ -9,9 +9,8 @@ class AppTheme {
       backgroundColor: AppColor.primaryColor,
       unselectedItemColor: AppColor.backgroundColor,
       selectedItemColor: AppColor.whiteColor,
-
-      //showSelectedLabels:,
-      //showUnselectedLabels:
+      showSelectedLabels: true,
+      showUnselectedLabels: false,
     ),
   );
 }
