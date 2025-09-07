@@ -23,4 +23,19 @@ static const String iconHadith='assets/images/svgs/hadeth.svg';
 static const String iconSebha='assets/images/svgs/sebha.svg';
 static const String iconRadio='assets/images/svgs/radio.svg';
 static const String iconTime='assets/images/svgs/time.svg';
+
+static const String searchQuran='assets/images/svgs/searchQuran.svg';
+static const String suraNumberFrame='assets/images/svgs/suraFrame.svg';
+static const String mostItemQuran='assets/images/pngs/imageMost.png';
+static const String frameSuraDetails='assets/images/pngs/frameDetails.png';
+static const String sebhaImage='assets/images/pngs/sebhaImage.png';
+
+static const String bgNotPlayRadio='assets/images/svgs/bgNotPlayRadio.svg';
+static const String bgSoundPlayRadio='assets/images/svgs/bgSoundPlayRadio.svg';
+static const String pauseSoundRadio='assets/images/svgs/pauseSoundRadio.svg';
+static const String playSoundRadio='assets/images/svgs/playSoundRadio.svg';
+static const String soundHighRadio='assets/images/svgs/soundHighRadio.svg';
+static const String soundLowRadio='assets/images/svgs/soundLowRadio.svg';
+
+
 }
