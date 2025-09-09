@@ -1,5 +1,3 @@
-
-import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class KeySharedPreference{
@@ -15,8 +13,10 @@ class SharedPreferenceHelper{
        //remove because duplicate
        if(valueMost.contains('$newMostRecently')){
          valueMost.remove('$newMostRecently');
+         valueMost.insert(0,'$newMostRecently');
+       }else{
+         valueMost.insert(0,'$newMostRecently');
        }
-       valueMost.insert(0,'$newMostRecently');
 
        // length 5 only
        if(valueMost.length >5){
