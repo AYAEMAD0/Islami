@@ -37,5 +37,8 @@ static const String playSoundRadio='assets/images/svgs/playSoundRadio.svg';
 static const String soundHighRadio='assets/images/svgs/soundHighRadio.svg';
 static const String soundLowRadio='assets/images/svgs/soundLowRadio.svg';
 
-
+static const String hadethBgImage='assets/images/pngs/bgHadeth.png';
+static const String hadethBgBottom='assets/images/pngs/hadethBgBottom.png';
+static const String hadethLeftCorner='assets/images/pngs/hadethLeftCorner.png';
+static const String hadethRightCorner='assets/images/pngs/hadethRightCorner.png';
 }
