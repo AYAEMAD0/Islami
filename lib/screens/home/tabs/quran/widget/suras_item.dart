@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:islami/core/utils/app_asset.dart';
 import 'package:islami/core/utils/app_route.dart';
 import 'package:islami/core/utils/app_style.dart';
+import 'package:islami/core/utils/shared_preferences_helper.dart';
 import 'package:islami/screens/home/tabs/quran/quran_resource.dart';
 
 class SurasItem extends StatelessWidget {
@@ -14,7 +15,7 @@ class SurasItem extends StatelessWidget {
     return GestureDetector(
       onTap: (){
         Navigator.pushNamed(context,AppRoute.suraDetailsRouteName,arguments: index);
-        print('------------------------clicked');
+        SharedPreferenceHelper().saveMostRecently(index);
       },
       child: ListTile(
         contentPadding: EdgeInsets.zero,
