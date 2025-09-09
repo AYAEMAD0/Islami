@@ -30,8 +30,8 @@ static const String mostItemQuran='assets/images/pngs/imageMost.png';
 static const String frameSuraDetails='assets/images/pngs/frameDetails.png';
 static const String sebhaImage='assets/images/pngs/sebhaImage.png';
 
-static const String bgNotPlayRadio='assets/images/svgs/bgNotPlayRadio.svg';
-static const String bgSoundPlayRadio='assets/images/svgs/bgSoundPlayRadio.svg';
+static const String bgNotPlayRadio='assets/images/pngs/bgNotPlayRadio.png';
+static const String bgSoundPlayRadio='assets/images/pngs/bgSoundPlayRadio.png';
 static const String pauseSoundRadio='assets/images/svgs/pauseSoundRadio.svg';
 static const String playSoundRadio='assets/images/svgs/playSoundRadio.svg';
 static const String soundHighRadio='assets/images/svgs/soundHighRadio.svg';

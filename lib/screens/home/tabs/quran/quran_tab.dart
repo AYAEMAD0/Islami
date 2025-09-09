@@ -7,8 +7,16 @@ import '../../../../core/utils/app_style.dart';
 import 'widget/most_recently_item.dart';
 import 'widget/suras_item.dart';
 
-class QuranTab extends StatelessWidget {
+class QuranTab extends StatefulWidget {
   const QuranTab({super.key});
+
+  @override
+  State<QuranTab> createState() => _QuranTabState();
+}
+
+class _QuranTabState extends State<QuranTab> {
+  //show in start
+  List<int> filterList=List.generate(114, (index)=>index);
 
   @override
   Widget build(BuildContext context) {
@@ -23,8 +31,11 @@ class QuranTab extends StatelessWidget {
           TextField(
             cursorColor: AppColor.primaryColor,
             cursorHeight: height * 0.03,
-            cursorWidth: width * 0.006,
+            cursorWidth: width * 0.007,
             style: AppStyle.bold16White,
+            onChanged: (searchKey){
+              searchBySearchKey(searchKey);
+            },
             decoration: InputDecoration(
               hintText: 'Sura Name',
               hintStyle: AppStyle.bold16White,
@@ -58,14 +69,14 @@ class QuranTab extends StatelessWidget {
           Expanded(
             child: ListView.separated(
               padding: EdgeInsets.only(top: height*0.01),
-              itemCount: QuranResource.arabicAuranSuras.length,
+              itemCount: filterList.length,
               separatorBuilder: (context, index) => Divider(
                 color: AppColor.whiteColor,
                 endIndent: width * 0.08,
                 indent: width * 0.11,
                 thickness: 1.5,
               ),
-              itemBuilder: (context, index) =>SurasItem(index:index),
+              itemBuilder: (context, index) =>SurasItem(index:filterList[index]),
             ),
           ),
         ],
@@ -78,5 +89,22 @@ class QuranTab extends StatelessWidget {
       borderRadius: BorderRadius.circular(16),
       borderSide: BorderSide(color: AppColor.primaryColor,width: 1.5),
     );
+  }
+
+  void searchBySearchKey(String searchKey) {
+    List<int> filteredResultList = [];
+
+    for (int i = 0; i < QuranResource.englishQuranSurahs.length; i++) {
+      if (QuranResource.englishQuranSurahs[i].toLowerCase().contains(
+          searchKey.toLowerCase())) {
+        filteredResultList.add(i);
+      } else if (QuranResource.arabicAuranSuras[i].contains(searchKey)) {
+        filteredResultList.add(i);
+      }
+    }
+    filterList=filteredResultList;
+    setState(() {
+
+    });
   }
 }
