@@ -6,16 +6,23 @@ import 'package:islami/core/utils/app_style.dart';
 import 'package:islami/core/utils/shared_preferences_helper.dart';
 import 'package:islami/screens/home/tabs/quran/quran_resource.dart';
 
-class SurasItem extends StatelessWidget {
+class SurasItem extends StatefulWidget {
   const SurasItem({super.key, required this.index});
   final int index;
+
+  @override
+  State<SurasItem> createState() => _SurasItemState();
+}
+
+class _SurasItemState extends State<SurasItem> {
+
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        Navigator.pushNamed(context,AppRoute.suraDetailsRouteName,arguments: index);
-        SharedPreferenceHelper().saveMostRecently(index);
+        Navigator.pushNamed(context,AppRoute.suraDetailsRouteName,arguments: widget.index);
+        SharedPreferenceHelper().saveMostRecently(widget.index);
       },
       child: ListTile(
         contentPadding: EdgeInsets.zero,
@@ -23,19 +30,19 @@ class SurasItem extends StatelessWidget {
           alignment: Alignment.center,
           children: [
             SvgPicture.asset(AppAsset.suraNumberFrame),
-            Text('${index + 1}', style: AppStyle.bold20White),
+            Text('${widget.index + 1}', style: AppStyle.bold20White),
           ],
         ),
         title: Text(
-          QuranResource.englishQuranSurahs[index],
+          QuranResource.englishQuranSurahs[widget.index],
           style: AppStyle.bold20White,
         ),
         subtitle: Text(
-          '${QuranResource.AyaNumber[index]} Verses',
+          '${QuranResource.AyaNumber[widget.index]} Verses',
           style: AppStyle.bold14White,
         ),
         trailing: Text(
-          QuranResource.arabicAuranSuras[index],
+          QuranResource.arabicAuranSuras[widget.index],
           style: AppStyle.bold20White,
         ),
       ),

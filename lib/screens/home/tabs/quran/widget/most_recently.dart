@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:islami/provider/most_recently_provider.dart';
+import 'package:provider/provider.dart';
 import '../../../../../core/utils/app_asset.dart';
 import '../../../../../core/utils/app_color.dart';
 import '../../../../../core/utils/app_style.dart';
-import '../../../../../core/utils/shared_preferences_helper.dart';
 import '../quran_resource.dart';
 
 class MostRecently extends StatefulWidget {
@@ -13,25 +14,22 @@ class MostRecently extends StatefulWidget {
 }
 
 class _MostRecentlyState extends State<MostRecently> {
-  List<int> mostRecently = [];
-
+  late MostRecentlyProvider mostRecently;
   @override
   void initState() {
-    getMostRecently();
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) => mostRecently.readMostRecently(),
+    );
     super.initState();
-  }
-
-  void getMostRecently() async {
-    mostRecently = await SharedPreferenceHelper().readMostRecently();
-    setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
+    mostRecently = Provider.of<MostRecentlyProvider>(context);
     return Visibility(
-      visible: mostRecently.isNotEmpty,
+      visible: mostRecently.mostRecentlyList.isNotEmpty,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -44,44 +42,42 @@ class _MostRecentlyState extends State<MostRecently> {
               scrollDirection: Axis.horizontal,
               separatorBuilder: (context, index) =>
                   SizedBox(width: width * 0.03),
-              itemCount: mostRecently.length,
+              itemCount: mostRecently.mostRecentlyList.length,
               itemBuilder: (context, index) {
-                return Expanded(
-                  child: Container(
-                    height: height * 0.16,
-                    padding: EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      color: AppColor.primaryColor,
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              QuranResource
-                                  .englishQuranSurahs[mostRecently[index]],
-                              style: AppStyle.bold24Black,
-                            ),
-                            SizedBox(height: height * 0.008),
-                            Text(
-                              QuranResource
-                                  .arabicAuranSuras[mostRecently[index]],
-                              style: AppStyle.bold24Black,
-                            ),
-                            SizedBox(height: height * 0.008),
-                            Text(
-                              "${QuranResource.AyaNumber[mostRecently[index]]} Verses",
-                              style: AppStyle.bold14Black,
-                            ),
-                          ],
-                        ),
-                        SizedBox(width: width * 0.03),
-                        Image.asset(AppAsset.mostItemQuran),
-                      ],
-                    ),
+                return Container(
+                  height: height * 0.16,
+                  padding: EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: AppColor.primaryColor,
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            QuranResource
+                                .englishQuranSurahs[mostRecently.mostRecentlyList[index]],
+                            style: AppStyle.bold24Black,
+                          ),
+                          SizedBox(height: height * 0.008),
+                          Text(
+                            QuranResource
+                                .arabicAuranSuras[mostRecently.mostRecentlyList[index]],
+                            style: AppStyle.bold24Black,
+                          ),
+                          SizedBox(height: height * 0.008),
+                          Text(
+                            "${QuranResource.AyaNumber[mostRecently.mostRecentlyList[index]]} Verses",
+                            style: AppStyle.bold14Black,
+                          ),
+                        ],
+                      ),
+                      SizedBox(width: width * 0.03),
+                      Image.asset(AppAsset.mostItemQuran),
+                    ],
                   ),
                 );
               },

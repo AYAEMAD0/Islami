@@ -52,24 +52,29 @@ class PrayTime extends StatelessWidget {
             options: CarouselOptions(
               enlargeCenterPage: true,
               aspectRatio: 15/6,
-              viewportFraction: 0.3,
+              viewportFraction: 0.33,
+              height: height * 0.20,
             ),
             items: PrayTimeModel.prayerTimes.map((pray) {
-              return Container(
-                padding: EdgeInsets.symmetric(horizontal: 12,vertical: 3),
-                decoration: BoxDecoration(
-                  gradient: AppColor.gradientTime,
-                  borderRadius: BorderRadius.circular(20),
-                ),
+              return SizedBox(
+                  width: width * 0.30,
+                  height: height * 0.18,
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+                    decoration: BoxDecoration(
+                      gradient: AppColor.gradientTime,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(pray.prayer, style: AppStyle.bold16White),
-                    Text(pray.hours, style: AppStyle.bold32White),
+                    Text(pray.hours, style: AppStyle.bold22White),
                     Text(pray.time, style: AppStyle.bold16White),
                   ],
                 ),
-              );
+              ));
             }).toList(),
           ),
         ),

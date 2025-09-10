@@ -4,7 +4,7 @@ import 'package:islami/core/utils/app_theme.dart';
 import 'package:islami/screens/home/tabs/quran/sura_details/sura_details.dart';
 import 'package:islami/screens/home/tabs/quran/sura_details_without_line/sura_details_without_line.dart';
 import '../home/home_screen.dart';
-import '../home/tabs/hadeth/details_hadeth/hadeth_details.dart' show HadethDetails;
+import '../home/tabs/hadeth/details_hadeth/hadeth_details.dart';
 import '../onboarding/onboarding_screen.dart';
 
 

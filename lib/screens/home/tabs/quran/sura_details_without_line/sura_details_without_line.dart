@@ -5,7 +5,6 @@ import 'package:islami/core/utils/app_color.dart';
 import 'package:islami/core/utils/app_route.dart';
 import 'package:islami/core/utils/app_style.dart';
 import 'package:islami/screens/home/tabs/quran/quran_resource.dart';
-import 'package:islami/screens/home/tabs/quran/sura_details/sura_content.dart';
 import 'package:islami/screens/home/tabs/quran/sura_details_without_line/sura_content_without_line.dart';
 
 
@@ -88,6 +87,5 @@ class _SuraDetailsWithoutLineState extends State<SuraDetailsWithoutLine> {
 
     suraContent = suraLines.join();
     setState(() {});
-    print('-------------finised');
   }
 }

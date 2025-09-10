@@ -44,7 +44,7 @@ class _ItemRadioState extends State<ItemRadio> {
 
         Column(
           children: [
-            Text(widget.name, style: AppStyle.bold20Balck),
+            Text(widget.name, style: AppStyle.bold20Black),
             SizedBox(height: height * 0.02),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

@@ -53,6 +53,7 @@ class _QuranTabState extends State<QuranTab> {
             ),
           ),
           SizedBox(height: height * 0.03),
+          //most recently
           MostRecently(),
 
           SizedBox(height: height * 0.02),

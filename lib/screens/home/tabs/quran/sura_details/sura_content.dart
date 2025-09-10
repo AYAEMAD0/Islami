@@ -3,7 +3,7 @@ import '../../../../../core/utils/app_color.dart';
 import '../../../../../core/utils/app_style.dart';
 
 class SuraContent extends StatelessWidget {
-   SuraContent({
+   const SuraContent({
     super.key,
     required this.index,
     required this.content,
@@ -37,11 +37,11 @@ class SuraContent extends StatelessWidget {
           border: Border.all(color: AppColor.primaryColor, width: 1.5),
         ),
         child: Text(
-          '[${index + 1}] ${content}',
+          '[${index + 1}] $content',
           textDirection: TextDirection.rtl,
           textAlign: TextAlign.center,
           style: isSelected
-              ? AppStyle.bold20Balck
+              ? AppStyle.bold20Black
               : AppStyle.bold20Primary,
         ),
       ),

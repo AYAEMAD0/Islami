@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:islami/core/utils/app_asset.dart';
+
 import 'package:islami/core/widget/custom_button/custom_button.dart';
 import 'package:islami/core/utils/app_color.dart';
 import 'package:islami/screens/home/tabs/radio/widget/item_radio.dart';
 
 class RadioTab extends StatefulWidget {
-  RadioTab({super.key});
+  const RadioTab({super.key});
   final List<String> nameReciters = const [
     'Ibrahim Al-Akdar',
     'Akram Alalaqmi',
@@ -26,8 +25,8 @@ class RadioTab extends StatefulWidget {
 
 class _RadioTabState extends State<RadioTab> {
   late List<String> showValue;
-  int? currentPlay = null;
-  int? currentSound = null;
+  int? currentPlay;
+  int? currentSound ;
   bool isClickRadio = true;
   bool isClickReciters = false;
 

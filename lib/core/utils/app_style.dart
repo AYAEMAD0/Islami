@@ -36,12 +36,12 @@ class AppStyle {
     fontWeight: FontWeight.bold,
   );
   static final TextStyle bold20BlackOpacity70= GoogleFonts.elMessiri(
-    fontSize: 20,
+    fontSize: 15,
     color: AppColor.backgroundColor.withOpacity(0.70),
     fontWeight: FontWeight.bold,
   );
   static final TextStyle bold20BlackOpacity90= GoogleFonts.elMessiri(
-    fontSize: 20,
+    fontSize: 15,
     color: AppColor.backgroundColor.withOpacity(0.90),
     fontWeight: FontWeight.bold,
   );
@@ -55,8 +55,8 @@ class AppStyle {
     color: AppColor.whiteColor,
     fontWeight: FontWeight.bold,
   );
-  static final TextStyle bold32White = GoogleFonts.elMessiri(
-    fontSize: 32,
+  static final TextStyle bold22White = GoogleFonts.elMessiri(
+    fontSize: 22,
     color: AppColor.whiteColor,
     fontWeight: FontWeight.bold,
   );
@@ -65,7 +65,7 @@ class AppStyle {
     color: AppColor.whiteColor,
     fontWeight: FontWeight.bold,
   ) ;
-  static final TextStyle bold20Balck= GoogleFonts.elMessiri(
+  static final TextStyle bold20Black= GoogleFonts.elMessiri(
     fontSize: 20,
     color: AppColor.backgroundColor,
     fontWeight: FontWeight.bold,

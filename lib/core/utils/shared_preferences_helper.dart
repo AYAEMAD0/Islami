@@ -27,12 +27,6 @@ class SharedPreferenceHelper{
   }
 
 
-  Future<List<int>> readMostRecently()async{
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    List<String> value =prefs.getStringList(KeySharedPreference.mostRecentlyKey)??[];
-    List<int> mostRecentlyListInt=value.map((element)=>int.parse(element)).toList();
-    //mostRecentlyListInt.reverse.toList()
-    return mostRecentlyListInt;
-  }
+
 
 }

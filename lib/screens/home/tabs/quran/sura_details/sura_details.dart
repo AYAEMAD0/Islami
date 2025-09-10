@@ -6,9 +6,11 @@ import 'package:islami/core/utils/app_route.dart';
 import 'package:islami/core/utils/app_style.dart';
 import 'package:islami/screens/home/tabs/quran/quran_resource.dart';
 import 'package:islami/screens/home/tabs/quran/sura_details/sura_content.dart';
+import 'package:provider/provider.dart';
+import '../../../../../provider/most_recently_provider.dart';
 
 class SuraDetails extends StatefulWidget {
-  SuraDetails({super.key});
+  const SuraDetails({super.key});
 
   @override
   State<SuraDetails> createState() => _SuraDetailsState();
@@ -18,11 +20,20 @@ class _SuraDetailsState extends State<SuraDetails> {
   List<String> suraVerses = [];
   int? selectedVerseIndex;
 
+  late MostRecentlyProvider mostRecently;
+
+  @override
+  void dispose() {
+    super.dispose();
+    mostRecently.readMostRecently();
+  }
 
   @override
   Widget build(BuildContext context) {
     int index = ModalRoute.of(context)!.settings.arguments as int;
     double height = MediaQuery.of(context).size.height;
+
+    mostRecently=Provider.of<MostRecentlyProvider>(context);
 
     if (suraVerses.isEmpty) {
       loadSura(index);
@@ -96,11 +107,7 @@ class _SuraDetailsState extends State<SuraDetails> {
       'assets/files/suras/${index + 1}.txt',
     );
     List<String> suraLines = suraFile.split('\n');
-    for (int i = 0; i < suraLines.length; i++) {
-      print(suraLines[i]);
-    }
     suraVerses = suraLines;
     setState(() {});
-    print('-------------finised');
   }
 }
