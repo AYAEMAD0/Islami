@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami/core/utils/app_style.dart';
 
 import 'app_color.dart';
 
@@ -9,9 +10,13 @@ class AppTheme {
       backgroundColor: AppColor.primaryColor,
       unselectedItemColor: AppColor.backgroundColor,
       selectedItemColor: AppColor.whiteColor,
-
-      //showSelectedLabels:,
-      //showUnselectedLabels:
+      showSelectedLabels: true,
+      showUnselectedLabels: false,
     ),
+    appBarTheme: AppBarTheme(
+      backgroundColor: AppColor.backgroundColor,
+        titleTextStyle: AppStyle.bold20White.copyWith(color: AppColor.primaryColor),
+      iconTheme: IconThemeData(color: AppColor.primaryColor)
+    )
   );
 }

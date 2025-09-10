@@ -1,0 +1,57 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:islami/core/utils/app_color.dart';
+
+class AppStyle {
+  static final TextStyle bold16White = GoogleFonts.elMessiri(
+    fontSize: 16,
+    color: AppColor.whiteColor,
+    fontWeight: FontWeight.bold,
+  ) ;
+  static final TextStyle bold16Black = GoogleFonts.elMessiri(
+    fontSize: 16,
+    color: AppColor.backgroundColor,
+    fontWeight: FontWeight.bold,
+  ) ;
+  static final TextStyle bold24Black = GoogleFonts.elMessiri(
+    fontSize: 24,
+    color: AppColor.backgroundColor,
+    fontWeight: FontWeight.bold,
+  ) ;
+
+  static final TextStyle bold24Primary = GoogleFonts.elMessiri(
+    fontSize: 24,
+    color: AppColor.primaryColor,
+    fontWeight: FontWeight.bold,
+  ) ;
+  static final TextStyle bold20Primary = GoogleFonts.elMessiri(
+    fontSize: 20,
+    color: AppColor.primaryColor,
+    fontWeight: FontWeight.bold,
+  );
+  static final TextStyle bold14Black = GoogleFonts.elMessiri(
+    fontSize: 14,
+    color: AppColor.backgroundColor,
+    fontWeight: FontWeight.bold,
+  ) ;
+  static final TextStyle bold20White = GoogleFonts.elMessiri(
+    fontSize: 20,
+    color: AppColor.whiteColor,
+    fontWeight: FontWeight.bold,
+  );
+  static final TextStyle bold14White= GoogleFonts.elMessiri(
+    fontSize: 14,
+    color: AppColor.whiteColor,
+    fontWeight: FontWeight.bold,
+  ) ;
+  static final TextStyle bold20Balck= GoogleFonts.elMessiri(
+    fontSize: 20,
+    color: AppColor.backgroundColor,
+    fontWeight: FontWeight.bold,
+  ) ;
+  static final TextStyle bold36White= GoogleFonts.elMessiri(
+    fontSize: 36,
+    color: AppColor.whiteColor,
+    fontWeight: FontWeight.bold,
+  ) ;
+}
